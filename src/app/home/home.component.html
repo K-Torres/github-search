@@ -21,7 +21,7 @@
                     <p>Score: {{ profile.score }}</p>
                 </a>
             </div>
-            <canvas baseChart *ngIf="profiles.length > 0"
+            <canvas display="block" max-width="700px" baseChart *ngIf="profiles.length > 1"
                 [datasets]="barChartData"
                 [labels]="barChartLabels"
                 [options]="barChartOptions"
