@@ -1,0 +1,35 @@
+<div class="search-wrapper">
+    <div class="search-header">
+        <div class="search-header_image">
+            <img src="https://images.unsplash.com/photo-1618401479427-c8ef9465fbe1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1026&q=80" alt="github-image">
+            <p>Search a Github Profile</p>
+            <div class="search-header_input">
+                <div class="search-header_input-container">
+                    <input [(ngModel)]="inputText" type="text" class="search-input" placeholder="Type a name...">
+                    <button (click)="searchProfiles()"><i class="fa fa-search"></i></button> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="searh-results">
+        <p class="searh-results-tittle">Search results</p>
+        <div class="profiles-list" *ngIf="profiles">
+            <div class="profile-item" *ngFor= "let profile of profiles">
+                <a (click)="navigate(profile.id)" routerLink="/Profile" >
+                    <img src={{profile.avatar_url}} alt="profile-avatar">
+                    <p>Username: {{ profile.login }}</p>
+                    <p>Score: {{ profile.score }}</p>
+                </a>
+            </div>
+            <canvas baseChart *ngIf="profiles.length > 0"
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+            </canvas>
+        <div>
+    </div>
+
+</div>
