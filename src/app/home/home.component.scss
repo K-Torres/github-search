@@ -43,6 +43,7 @@
     display: block;
     width: 100%;
     margin: 0px 15px;
+
     input {
       width: 90%;
       padding: 1rem;
@@ -64,10 +65,14 @@
 
 .searh-results {
   margin-top: 40px;
+  text-align: center;
 
+  .searh-results-errortext {
+    color: red;
+    margin-top: -10px;
+  }
   .searh-results-tittle {
     font-size: 1.5rem;
-    text-align: center;
     font-weight: bold;
   }
 }

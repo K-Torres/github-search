@@ -9,9 +9,11 @@
                     <button (click)="searchProfiles()"><i class="fa fa-search"></i></button> 
                 </div>
             </div>
+            
         </div>
     </div>
     <div class="searh-results">
+        <p class="searh-results-errortext">{{ errorMessage }}</p>
         <p class="searh-results-tittle">Search results</p>
         <div class="profiles-list" *ngIf="profiles">
             <div class="profile-item" *ngFor= "let profile of profiles">
